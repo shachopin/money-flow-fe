@@ -1,6 +1,3 @@
-import React from 'react';
-import { render } from 'react-dom';
-// Import Highcharts
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
 import SankeyModule from 'highcharts/modules/sankey';
@@ -60,9 +57,10 @@ Highcharts.wrap(
   }
 );
 
-export default function Chart({data}) {
+export default function FlowChart({data, titleEnabled=false, titleText=''}) {
   const options = {
     chart: {
+       width: 1000,
       //height: 520,
       events: {
         load() {
@@ -113,8 +111,8 @@ export default function Chart({data}) {
       headerFormat: '',
     },
     title: {
-      text: '',
-      enabled: false,
+      text: titleText,
+      enabled: titleEnabled,
     },
     legend: {
       enabled: false,

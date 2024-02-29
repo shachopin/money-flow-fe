@@ -3,3 +3,16 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+
+
+.toggle input[type="checkbox"] {
+  display: none;
+}
+
+.toggle.on {
+  background-color: green;
+}
+
+.toggle.off {
+  background-color: red;
+}
