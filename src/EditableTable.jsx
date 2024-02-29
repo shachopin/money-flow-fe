@@ -22,7 +22,7 @@ import { db } from "./firebase_config";
 //   },
 // ]
 
-const EditableTable = ({data}) => {
+const EditableTable = ({data, collectionName}) => {
   //const [employeeData, setEmployeeData] = useState(data)
 
 //   const onChangeInput = (e, employeeId) => {
@@ -36,7 +36,7 @@ const EditableTable = ({data}) => {
 //   }
   const onChangeInput = (e, id) => {
     const {name, value} = e.target;
-    db.collection("items")
+    db.collection(collectionName)
       .doc(id)
       .update({
         [name]: name === 'amount' && value && !value.endsWith(".") ? parseFloat(value) : value,
@@ -44,7 +44,7 @@ const EditableTable = ({data}) => {
   };
   
   const onDelete = (id) => {
-     db.collection("items").doc(id).delete();
+     db.collection(collectionName).doc(id).delete();
   };
 
   return (
