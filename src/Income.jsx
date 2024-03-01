@@ -31,7 +31,7 @@ function Income() {
       {items.length > 0 && (
         <FlowChart
           titleEnabled
-          titleText={`Total Inflow: ${totalInFlow}, Total Outflow: ${totalOutFlow}`}
+          titleText={`Total Monthly Inflow: ${totalInFlow}, Total Monthly Outflow: ${totalOutFlow}`}
           data={items.map((item) => [
             item.source,
             item.destination,
